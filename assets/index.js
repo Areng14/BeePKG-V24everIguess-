@@ -87,5 +87,16 @@ function beginAutosaveLoop() {
 	}, 1000*30 )
 }
 
+
+globalThis.hideDeprWarning = function() {
+	q('#depr-warning').style.display = 'none';
+	localStorage.setItem('beepkg-depr-shown', '1');
+}
+
+if (localStorage.getItem('beepkg-depr-shown') !== '1') {
+	q('#depr-warning').style.display = 'block';
+}
+
+
 setupPackage(restoreSave())
 beginAutosaveLoop()
