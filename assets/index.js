@@ -90,10 +90,12 @@ btnZipTypeToggle.onclick = function ()
 	if (zipType == "zip") {
 		zipType = "bee";
 		btnZipTypeToggle.innerHTML = "to .zip"
+		btnDownload.innerHTML = "Download .bee"
 	}
 	else if (zipType == "bee") {
 		zipType = "zip";
 		btnZipTypeToggle.innerHTML = "to .bee_pack"
+		btnDownload.innerHTML = "Download zip"
 	};
 }
 
