@@ -731,17 +731,17 @@ if  (isbtntype = true) {
    "Condition" {
       "Instance" "<MORE_TURRETS>"
       "Result"
-            "Switch"
-            {
+            "Switch" {
+            
                 "Flag" "instvar"
                 "$button_type = 0" {
-                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_0.vmf"
+                    "ChangeInstace" "instances/BEE2/beepkg/more_turrets/more_turrets_0.vmf"
                 }
                 "$button_type = 1" {
-                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_2.vmf"
+                    "ChangeInstace" "instances/BEE2/beepkg/more_turrets/more_turrets_2.vmf"
                 }
                 "$button_type = 2" {
-                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_4.vmf"
+                    "ChangeInstace" "instances/BEE2/beepkg/more_turrets/more_turrets_4.vmf"
                 }
             }
         }
