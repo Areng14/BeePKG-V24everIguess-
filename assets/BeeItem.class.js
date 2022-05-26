@@ -2,7 +2,8 @@ import { ComponentBase } from "./ComponentBase.class.js";
 import { _ } from "./Escape.util.js";
 
 export class BeeItem extends ComponentBase {
-	constructor( parent, json={} ) {
+	constructor(parent, json = {}) {
+		var buttonTypeInstanceHandler = ``
 		super();
 
 		this.parent = parent;
@@ -135,7 +136,7 @@ export class BeeItem extends ComponentBase {
 			<button data-click="item-delete">Delete Item</button>
 		`
 	}
-
+	
 	handleInstanceSetup(val,self) {
 		self.json.picker = val;
 		function setState(ind, isHidden, labelText) {
@@ -151,6 +152,7 @@ export class BeeItem extends ComponentBase {
 				setState(3,true,'(Unused)');
 				setState(4,true,'(Unused)');
 				setState(5,true,'(Unused)');
+				this.buttonTypeInstanceHandler = ``
 				break;
 			case 'singleWB':
 				setState(0,false,'Item Instance (White)');
@@ -159,6 +161,7 @@ export class BeeItem extends ComponentBase {
 				setState(3,true,'(Unused)');
 				setState(4,true,'(Unused)');
 				setState(5,true,'(Unused)');
+				this.buttonTypeInstanceHandler = ``
 				break;
 			case 'buttontype':
 					setState(0,false,'Item Instance (Weighted)');
@@ -167,6 +170,12 @@ export class BeeItem extends ComponentBase {
 					setState(3,true,'(Unused)');
 					setState(4,false,'Item Instance (Sphere)');
 					setState(5,true,'(Unused)');
+					this.buttonTypeInstanceHandler =
+`							"ButtonType"
+                            {
+                                    "DefaultValue"    "0"
+                                        "Index"    "2"
+                            }`
 					break;
 			case 'buttontypeWB':
 				setState(0,false,'Item Instance (Weighted) (White)');
@@ -175,6 +184,12 @@ export class BeeItem extends ComponentBase {
 				setState(3,false,'Item Instance (Cube) (Black)');
 				setState(4,false,'Item Instance (Sphere) (White)');
 				setState(5,false,'Item Instance (Sphere) (Black)');
+				this.buttonTypeInstanceHandler =
+`							"ButtonType"
+                            {
+                                    "DefaultValue"    "0"
+                                        "Index"    "2"
+                            }`
 				break;
 		}
 	}
@@ -334,6 +349,7 @@ export class BeeItem extends ComponentBase {
 			"DefaultValue"	"0"
 			"Index"	"1"
 		}
+		${this.buttonTypeInstanceHandler}
 	}
 
 	"Exporting"
