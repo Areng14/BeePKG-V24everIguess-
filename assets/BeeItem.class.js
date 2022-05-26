@@ -725,7 +725,7 @@ ${
 	}
 }`);
 if  (isbtntype = true) {
-		await createFile('items/${this.idl}/vbsp_config.cfg',
+		await createFile(`items/${this.idl}/vbsp_config.cfg`,
 "Conditions" {
    "Condition" {
       "Instance" "${this.id}"
