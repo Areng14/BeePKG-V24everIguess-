@@ -46,7 +46,7 @@ export class BeePackage extends ComponentBase {
 		};
 
 		if (Object.keys(json).length > 0) {
-			alert( 'Your package was restored from your last session successfully. files will not be saved because im lazy lmao.' );
+			alert( 'Your package was restored from your last session successfully. For security, files from your computer are not saved.' );
 		}
 	}
 

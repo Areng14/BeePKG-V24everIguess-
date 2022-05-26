@@ -206,3 +206,9 @@ input:disabled {
 	color: #fff6;
 	cursor: pointer;
 }
+
+#button-zip-type-toggle {
+	position: fixed;
+	left: 5px;
+	top: 15px;
+}
