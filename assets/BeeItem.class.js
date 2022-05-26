@@ -2,7 +2,6 @@ import { ComponentBase } from "./ComponentBase.class.js";
 import { _ } from "./Escape.util.js";
 var isbtntype = false;
 export class BeeItem extends ComponentBase {
-	console.log("Hello World")
 	constructor(parent, json = {}) {
 		var buttonTypeInstanceHandler = ``
 		super();
@@ -352,9 +351,7 @@ export class BeeItem extends ComponentBase {
 			"DefaultValue"	"0"
 			"Index"	"1"
 		}
-
 		${this.buttonTypeInstanceHandler}
-
 	}
 	"Exporting"
 	{
