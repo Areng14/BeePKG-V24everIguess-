@@ -548,7 +548,7 @@ ${
 		}
 	}
 }`);
-if  (this.buttonTypeInstanceHandler != ``) {
+/*if  (this.buttonTypeInstanceHandler != ``) {
 		await createFile(`items/${this.idl}/vbsp_config.cfg`,`//Comment lmao
 "Conditions" {
    "Condition" {
@@ -570,7 +570,7 @@ if  (this.buttonTypeInstanceHandler != ``) {
     }
 }`);
 console.log("VBSP_CONFIG MADE")
-		}
+		}*/
 		// END
 		return true;
 	}
