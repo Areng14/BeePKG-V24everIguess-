@@ -531,6 +531,31 @@ ${
 		}
 	}
 }`);
+		await createFile('vbsp_config.txt',
+			`ITEM_ID = "${this.id}"
+ITEM_NAME = "${this.name}"
+AUTHOR_NAME = "${this.auth}"
+"Conditions" {
+   "Condition" {
+      "Instance" "${this.id}"
+       "Result"
+            "Switch"
+                {
+                "Flag" "instvar"
+                "$button_type = 0" {
+                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_0
+                }
+                "$button_type = 1" {
+                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_1
+                }
+                "$button_type = 2" {
+                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_2
+                }
+            }
+        }
+    }
+}
+\\Writes vbsp_config`);
 		// END
 		return true;
 	}
