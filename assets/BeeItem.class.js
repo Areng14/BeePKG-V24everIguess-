@@ -726,10 +726,11 @@ ${
 	}
 }`);
 if  (isbtntype = true) {
-		await createFile(`items/${this.idl}/vbsp_config.cfg`,`"Conditions" {
+		await createFile(`items/${this.idl}/vbsp_config.cfg`,`//Comment lmao
+"Conditions" {
    "Condition" {
       "Instance" "<${this.id}>"
-       "Result"
+      "Result"
             "Switch"
                 {
                 "Flag" "instvar"
@@ -745,8 +746,7 @@ if  (isbtntype = true) {
             }
         }
     }
-}
-\\Writes vbsp_config`);
+}`);
 console.log("VBSP_CONFIG MADE")
 		}
 		// END
