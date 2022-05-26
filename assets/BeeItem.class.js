@@ -171,13 +171,6 @@ export class BeeItem extends ComponentBase {
 					setState(4,false,'Item Instance (Sphere)');
 					setState(5,true,'(Unused)');
 					var isMultipleInstance = 1;
-					var buttonTypeEditoritems = 
-					'
-					"ButtonType"
-            				{
-                   				 "DefaultValue"    "0"
-                    					"Index"    "2"
-            				}';
 					break;
 			case 'buttontypeWB':
 				setState(0,false,'Item Instance (Weighted) (White)');
@@ -187,13 +180,6 @@ export class BeeItem extends ComponentBase {
 				setState(4,false,'Item Instance (Sphere) (White)');
 				setState(5,false,'Item Instance (Sphere) (Black)');
 				var isMultipleInstance = 1;
-				var buttonTypeEditoritems = 
-				'
-				"ButtonType"
-            			{
-                   			"DefaultValue"    "0"
-                    			"Index"    "2"
-            			}';
 				break;
 		}
 	}
@@ -354,7 +340,6 @@ export class BeeItem extends ComponentBase {
 			"Index"	"1"
 		}
 	}
-
 	"Exporting"
 	{
 		"Inputs"
@@ -387,7 +372,6 @@ this.json.outputs.map(outp => {
 })
 }
 		}
-
 		"Instances"
 		{
 			"0"
@@ -454,7 +438,6 @@ ${
 			}
 		}` : ''
 }
-
 		"ConnectionPoints"
 		{
 			// left
@@ -472,7 +455,6 @@ ${
 				"SignageOffset"		"-2 5 0"
 				"Priority"  "0"
 			}
-
 			// right
 			"Point"
 			{
@@ -488,7 +470,6 @@ ${
 				"SignageOffset"		"9 5 0"
 				"Priority"  "0"
 			}
-
 			// up
 			"Point"
 			{
@@ -504,7 +485,6 @@ ${
 				"SignageOffset"		"5 -2 0"
 				"Priority"  "0"
 			}
-
 			// down
 			"Point"
 			{
