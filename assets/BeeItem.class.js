@@ -3,8 +3,9 @@ import { _ } from "./Escape.util.js";
 var isbtntype = false;
 export class BeeItem extends ComponentBase {
 	constructor(parent, json = {}) {
-		var buttonTypeInstanceHandler = ``
 		super();
+
+		var buttonTypeInstanceHandler = ``
 
 		this.parent = parent;
 
@@ -171,7 +172,7 @@ export class BeeItem extends ComponentBase {
 					setState(4,false,'Item Instance (Sphere)');
 					setState(5,true,'(Unused)');
 					this.buttonTypeInstanceHandler =
-`		"ButtonType"
+`       "ButtonType"
         {
             "DefaultValue"    "0"
             "Index"    "2"
@@ -186,7 +187,7 @@ export class BeeItem extends ComponentBase {
 				setState(4,false,'Item Instance (Sphere) (White)');
 				setState(5,false,'Item Instance (Sphere) (Black)');
 				this.buttonTypeInstanceHandler =
-`		"ButtonType"
+`       "ButtonType"
         {
             "DefaultValue"    "0"
             "Index"    "2"
