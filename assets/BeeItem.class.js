@@ -549,7 +549,7 @@ if  (this.buttonTypeInstanceHandler != ``) {
 		await createFile(`items/${this.idl}/vbsp_config.cfg`,`//Comment lmao
 "Conditions" {
    "Condition" {
-      "Instance" "${this.id}"
+      "Instance" "<${this.id}>"
       "Result" {
             "Switch" {
                 "Flag" "instvar"
