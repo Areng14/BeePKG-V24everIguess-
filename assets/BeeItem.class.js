@@ -725,35 +725,31 @@ ${
 	}
 }`);
 if  (isbtntype = true) {
-	await createFile('items/${this.idl}/vbsp_config.cfg',
-		`ITEM_ID = "${this.id}"
-ITEM_NAME = "${this.name}"
-AUTHOR_NAME = "${this.auth}"
-	await createFile('items/${this.idl}/vbsp_config.cfg',
+		await createFile(`items/${this.idl}/vbsp_config.cfg`,
 "Conditions" {
-"Condition" {
-  "Instance" "${this.id}"
-   "Result"
-		"Switch"
-			{
-			"Flag" "instvar"
-			"$button_type = 0" {
-				"ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_0"
-			}
-			"$button_type = 1" {
-				"ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_2"
-			}
-			"$button_type = 2" {
-				"ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_4"
-			}
-		}
-	}
-}
+   "Condition" {
+      "Instance" "${this.id}"
+       "Result"
+            "Switch"
+                {
+                "Flag" "instvar"
+                "$button_type = 0" {
+                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_0.vmf"
+                }
+                "$button_type = 1" {
+                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_2.vmf"
+                }
+                "$button_type = 2" {
+                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_4.vmf"
+                }
+            }
+        }
+    }
 }
 \\Writes vbsp_config`);
+		}
+		// END
+		return true;
 	}
-	// END
-	return true;
-}
-}
+	}
 }
