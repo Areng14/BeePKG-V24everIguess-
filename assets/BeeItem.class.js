@@ -725,7 +725,7 @@ ${
 	}
 }`);
 		if  (isbtntype = true) {
-		await createFile(`items/${this.idl}/vbsp_config.cfg`,
+		await createFile("items/${this.idl/vbsp_config.cfg",
 "Conditions" {
    "Condition" {
       "Instance" "${this.id}"
@@ -734,13 +734,13 @@ ${
                 {
                 "Flag" "instvar"
                 "$button_type = 0" {
-                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_0
+                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_0"
                 }
                 "$button_type = 1" {
-                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_1
+                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_2"
                 }
                 "$button_type = 2" {
-                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_2
+                    "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_4"
                 }
             }
         }
