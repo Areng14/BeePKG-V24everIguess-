@@ -729,10 +729,10 @@ if  (isbtntype = true) {
 		await createFile(`items/${this.idl}/vbsp_config.cfg`,`//Comment lmao
 "Conditions" {
    "Condition" {
-      "Instance" "<${this.id}>"
+      "Instance" "<MORE_TURRETS>"
       "Result"
             "Switch"
-                {
+            {
                 "Flag" "instvar"
                 "$button_type = 0" {
                     "ChangeInstace" "instances/BEE2/beepkg/${this.idl}/${this.idl}_0.vmf"
@@ -746,6 +746,7 @@ if  (isbtntype = true) {
             }
         }
     }
+}
 }`);
 console.log("VBSP_CONFIG MADE")
 		}
