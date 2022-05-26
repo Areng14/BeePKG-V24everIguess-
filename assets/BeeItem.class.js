@@ -730,9 +730,8 @@ if  (isbtntype = true) {
 "Conditions" {
    "Condition" {
       "Instance" "<MORE_TURRETS>"
-      "Result"
+      "Result" {
             "Switch" {
-            
                 "Flag" "instvar"
                 "$button_type = 0" {
                     "ChangeInstace" "instances/BEE2/beepkg/more_turrets/more_turrets_0.vmf"
@@ -746,7 +745,6 @@ if  (isbtntype = true) {
             }
         }
     }
-}
 }`);
 console.log("VBSP_CONFIG MADE")
 		}
