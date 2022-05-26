@@ -536,9 +536,9 @@ ${
 	}
 }`);
 		
-if (var isMultipleInstance == 1){
-		await createFile('vbsp_config.txt',
-			`ITEM_ID = "${this.id}"
+if (isMultipleInstance == 1){
+        await createFile('vbsp_config.txt',
+            `ITEM_ID = "${this.id}"
 ITEM_NAME = "${this.name}"
 AUTHOR_NAME = "${this.auth}"
 "Conditions" {
@@ -563,7 +563,7 @@ AUTHOR_NAME = "${this.auth}"
 }
 \\Writes vbsp_config`);
 }
-		// END
-		return true;
-	}
+        // END
+        return true;
+    }
 }
