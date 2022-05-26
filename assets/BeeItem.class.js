@@ -67,9 +67,9 @@ export class BeeItem extends ComponentBase {
 
 		this._template = `
 			<hr>
-			<input data-return="name" placeholder="Item Name"><br>
+			<input data-return="name" placeholder="Item name"><br>
 			<input data-return="desc" placeholder="Item Description"><br>
-			<input data-return="auth" placeholder="Item Author">
+			<input data-return="auth" placeholder="Your name">
 			<hr>
 			<label>Rotation Handle</label>
 			<select data-return="handle">
