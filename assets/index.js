@@ -95,7 +95,7 @@ btnZipTypeToggle.onclick = function ()
 	else if (zipType == "bee") {
 		zipType = "zip";
 		btnZipTypeToggle.innerHTML = "to .bee_pack"
-		btnDownload.innerHTML = "Download zip"
+		btnDownload.innerHTML = "Download .zip"
 	};
 }
 
