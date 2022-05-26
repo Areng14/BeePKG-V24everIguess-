@@ -98,7 +98,8 @@ export class BeePackage extends ComponentBase {
 
 		console.log(`[${this.id}] Finished processing items!`);
 
-		await createFile('info.txt',info);
+		await createFile('info.txt', info);
+		
 		return await zip.generateAsync({type:"blob"})
 	}
 }
