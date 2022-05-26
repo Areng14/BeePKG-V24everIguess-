@@ -6,6 +6,7 @@ export class BeeItem extends ComponentBase {
 		super();
 
 		var buttonTypeInstanceHandler = ``
+		var buttonTypeInstances = ``
 
 		this.parent = parent;
 
@@ -145,7 +146,7 @@ export class BeeItem extends ComponentBase {
 			e.children[0].innerText = labelText;
 			e.hidden = isHidden;
 		}
-		switch(val) {
+		switch (val) {
 			case 'single':
 				setState(0,false,'Item Instance');
 				setState(1,true,'(Unused)');
