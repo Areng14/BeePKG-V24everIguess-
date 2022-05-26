@@ -527,6 +527,11 @@ export class BeeItem extends ComponentBase {
 			"DefaultValue"	"0"
 			"Index"	"1"
 		}
+		"ButtonType"
+        	{
+            		"DefaultValue"    "0"
+            		"Index"    "2"
+        	}
 	}
 	"Exporting"
 	{
@@ -720,10 +725,7 @@ ${
 	}
 }`);
 		if  (isbtntype = true) {
-		await createFile('items/${this.idl}/vbsp_config.cfg',
-			`ITEM_ID = "${this.id}"
-ITEM_NAME = "${this.name}"
-AUTHOR_NAME = "${this.auth}"
+		await createFile(`items/${this.idl}/vbsp_config.cfg`,
 "Conditions" {
    "Condition" {
       "Instance" "${this.id}"
