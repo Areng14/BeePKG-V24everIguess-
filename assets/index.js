@@ -41,14 +41,15 @@ function setupPackage(json={}) {
 			if (zipType == "zip") {
 
 				saveAs(x, `ucp_${pkg.idl}.zip`);
+				btnDownload.disabled = false;
+				btnDownload.innerHTML = 'Download .zip';
 			}
 			else if (zipType == "bee")
 			{
 				saveAs(x, `ucp_${pkg.idl}.bee_pack`);
+				btnDownload.disabled = false;
+				btnDownload.innerHTML = 'Download .bee';
 			};
-
-			btnDownload.disabled = false;
-			btnDownload.innerText = 'Download';
 
 		}).catch((err)=>{
 			
