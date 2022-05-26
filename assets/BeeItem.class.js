@@ -2,6 +2,7 @@ import { ComponentBase } from "./ComponentBase.class.js";
 import { _ } from "./Escape.util.js";
 
 var isMultipleInstance = 0;
+var buttonTypeEditoritems = "";
 //Makes a varible
 export class BeeItem extends ComponentBase {
 	constructor( parent, json={} ) {
@@ -170,6 +171,13 @@ export class BeeItem extends ComponentBase {
 					setState(4,false,'Item Instance (Sphere)');
 					setState(5,true,'(Unused)');
 					var isMultipleInstance = 1;
+					var buttonTypeEditoritems = 
+					'
+					"ButtonType"
+            				{
+                   				 "DefaultValue"    "0"
+                    					"Index"    "2"
+            				}';
 					break;
 			case 'buttontypeWB':
 				setState(0,false,'Item Instance (Weighted) (White)');
@@ -179,6 +187,13 @@ export class BeeItem extends ComponentBase {
 				setState(4,false,'Item Instance (Sphere) (White)');
 				setState(5,false,'Item Instance (Sphere) (Black)');
 				var isMultipleInstance = 2;
+				var buttonTypeEditoritems = 
+				'
+				"ButtonType"
+            			{
+                   			"DefaultValue"    "0"
+                    			"Index"    "2"
+            			}';
 				break;
 		}
 	}
