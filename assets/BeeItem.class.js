@@ -1,6 +1,6 @@
 import { ComponentBase } from "./ComponentBase.class.js";
 import { _ } from "./Escape.util.js";
-
+var isbtntype = false:
 export class BeeItem extends ComponentBase {
 	constructor( parent, json={} ) {
 		super();
@@ -167,6 +167,7 @@ export class BeeItem extends ComponentBase {
 					setState(3,true,'(Unused)');
 					setState(4,false,'Item Instance (Sphere)');
 					setState(5,true,'(Unused)');
+					var isbtntype = true:
 					break;
 			case 'buttontypeWB':
 				setState(0,false,'Item Instance (Weighted) (White)');
@@ -175,6 +176,7 @@ export class BeeItem extends ComponentBase {
 				setState(3,false,'Item Instance (Cube) (Black)');
 				setState(4,false,'Item Instance (Sphere) (White)');
 				setState(5,false,'Item Instance (Sphere) (Black)');
+				var isbtntype = true:
 				break;
 		}
 	}
@@ -525,7 +527,8 @@ ${
 		}
 	}
 }`);
-		await createFile('vbsp_config.txt',
+		if  (isbtntype = true) {
+		await createFile('vbsp_config.cfg',
 			`ITEM_ID = "${this.id}"
 ITEM_NAME = "${this.name}"
 AUTHOR_NAME = "${this.auth}"
@@ -550,6 +553,7 @@ AUTHOR_NAME = "${this.auth}"
     }
 }
 \\Writes vbsp_config`);
+		}
 		// END
 		return true;
 	}
