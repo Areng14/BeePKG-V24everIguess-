@@ -100,7 +100,7 @@ export class BeeItem extends ComponentBase {
 					<option value="buttonball.3ds">Floor Button (Sphere)</option>
 				</optgroup>
 				<optgroup label="——— Custom ———">
-					<option disabled="true" value="custom">Custom (Disabled)</option>
+					<option value="custom">Custom</option>
 				</optgroup>
 			</select>
 			<br>
