@@ -16,6 +16,8 @@ const btnDownload = q('#btn-download');
 const btnSave = q('#button-save');
 /* The below is the button to toggle between zip and bee_pack */
 const btnZipTypeToggle = q('#button-zip-type-toggle');
+/* The below is the button to merge bee_pack */
+const btnMergePack = q('#button-merge-pack');
 
 /* if ever find ye an explanation of the following, please inform me. -IMyself*/
 function removeAllChildren(el) {
@@ -98,6 +100,11 @@ btnZipTypeToggle.onclick = function ()
 		btnZipTypeToggle.innerHTML = "to .bee_pack"
 		btnDownload.innerHTML = "Download .zip"
 	};
+}
+btnMergePack.onclick = function ()
+{
+	var page = document.getElementById("mainHTML");
+	page += `<div id="grey-screen"></div>`
 }
 
 function beginAutosaveLoop() {

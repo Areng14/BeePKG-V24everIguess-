@@ -207,8 +207,13 @@ input:disabled {
 	cursor: pointer;
 }
 
-#button-zip-type-toggle {
+/*IMyselfs style correction (messy, appologies)*/
+#div-side-bar {
 	position: fixed;
 	left: 5px;
 	top: 15px;
+}
+
+#grey-screen {
+	position: fixed;
 }
