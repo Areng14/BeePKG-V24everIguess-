@@ -55,6 +55,7 @@ export class ComponentBase {
 		})
 	}
 
+	/* AH!! VTF CONVERSION!! I FOUND IT XD*/
 	async convertToVTF(file,vtfArgs={}) {
 		return new Promise(async (resolve,reject) => {
 			const url = await this.readToDataURL(file);

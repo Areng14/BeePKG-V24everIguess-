@@ -4,20 +4,20 @@ import { BeePackage } from "./BeePackage.class.js";
 	Index.js
 */
 
-function q(x,p=document) { return p.querySelector(x) }
+function ElementSelect(x,p=document) { return p.querySelector(x) }
 
 /* The below is the file in question. */
 var pkg;
 /* The below is the variable declaring whether or not it is a zip or a bee_pack */
 var zipType = "zip";
 /* The below is for downloading the file */
-const btnDownload = q('#btn-download');
+const btnDownload = ElementSelect('#btn-download');
 /* The below is for saving the project for future purposes */
-const btnSave = q('#button-save');
+const btnSave = ElementSelect('#button-save');
 /* The below is the button to toggle between zip and bee_pack */
-const btnZipTypeToggle = q('#button-zip-type-toggle');
+const btnZipTypeToggle = ElementSelect('#button-zip-type-toggle');
 /* The below is the button to merge bee_pack */
-const btnMergePack = q('#button-merge-pack');
+const btnMergePack = ElementSelect('#button-merge-pack');
 
 /* if ever find ye an explanation of the following, please inform me. -IMyself*/
 function removeAllChildren(el) {
@@ -31,7 +31,7 @@ function setupPackage(json={}) {
 	
 	// This isn't necessary. Packages can't be loaded by file yet.
 	// removeAllChildren(q('#pkg-container'));
-	q('#pkg-container').appendChild(pkg.html());
+	ElementSelect('#pkg-container').appendChild(pkg.html());
 
 	btnDownload.onclick = () => {
 		btnDownload.disabled = true;
@@ -109,7 +109,7 @@ btnMergePack.onclick = function ()
 
 function beginAutosaveLoop() {
 
-	q('#pkg-container').addEventListener('input',()=>{
+	ElementSelect('#pkg-container').addEventListener('input',()=>{
 		btnSave.classList.add('needs-save');
 		btnSave.innerText = 'Save Now';
 		needsSave = true;
