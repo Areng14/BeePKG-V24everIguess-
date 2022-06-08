@@ -22,3 +22,5 @@
 10:Package merger                                 (UNDER DEVELOPMENT)
 ========================
 11:better start reversed and start enabled
+==========================================
+12:Make autosave reload independant of the rest of the scripts (better error catching)
