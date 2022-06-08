@@ -9,6 +9,8 @@ function ElementSelect(x, p = document) { return p.querySelector(x) }
 
 /* The below is a developing assistance tool. Should always remain set to "false" */
 var devTool = true;
+/* The below is the button for turning on dev (cannot be accessed except through f12 devtools) */
+const btnDev = ElementSelect('#button-dev');
 
 
 /* The below is the file in question. */
@@ -113,9 +115,14 @@ btnMergePack.onclick = function ()
 	if (devTool) {
 		console.warn("logged in as dev, running package.")
 		var page = document.getElementById("mainHTML");
-		page += `<div id="grey-screen"></div>`
+		page.innerHTML += `<div id="grey-screen"></div>`
     }
 	
+}
+
+btnDev.onClick = function ()
+{
+	devTool = true;
 }
 
 function beginAutosaveLoop() {
