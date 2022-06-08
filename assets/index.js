@@ -111,6 +111,7 @@ btnMergePack.onclick = function ()
 {
 	alert("This button is in alpha developing state. No proper function yet available.")
 	if (devTool) {
+		console.warn("logged in as dev, running package.")
 		var page = document.getElementById("mainHTML");
 		page += `<div id="grey-screen"></div>`
     }
