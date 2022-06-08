@@ -29,6 +29,7 @@ export class BeeItem extends ComponentBase {
 			...json
 		}
 
+		// editoritems template sections (idk what's happening)
 		this._templateProperties = {
 			'name': (x) => { this.json.name = x.value },
 			'desc': (x) => { this.json.desc = x.value },
@@ -49,6 +50,7 @@ export class BeeItem extends ComponentBase {
 			'item-embed': (x) => { this.json.embed = x.checked }
 		}
 
+		//replacements of those  above editoritem sections (for the case of extra buttons pushed on BeePKG)
 		this._templateReplacements = {
 			'name': this.json.name,
 			'desc': this.json.desc,
@@ -62,12 +64,14 @@ export class BeeItem extends ComponentBase {
 			'item-embed': this.json.embed
 		}
 
+		//easy enough
 		this._templateClickActions = {
 			'item-delete': () => { this.parent.json.items = this.parent.json.items.filter(x => { return x !== this; }); this._html.remove(); },
 			'add-input': () => { this.addInput() },
 			'add-output': () => { this.addOutput() }
 		}
 
+		//ok- its the drop downs for handle and editor model and stuff- no its the whole page ig- okay
 		this._template = `
 			<hr>
 			<input data-return="name" placeholder="Item name"><br>

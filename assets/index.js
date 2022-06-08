@@ -4,18 +4,20 @@ import { BeePackage } from "./BeePackage.class.js";
 	Index.js
 */
 
-function q(x,p=document) { return p.querySelector(x) }
+function ElementSelect(x,p=document) { return p.querySelector(x) }
 
 /* The below is the file in question. */
 var pkg;
 /* The below is the variable declaring whether or not it is a zip or a bee_pack */
 var zipType = "zip";
 /* The below is for downloading the file */
-const btnDownload = q('#btn-download');
+const btnDownload = ElementSelect('#btn-download');
 /* The below is for saving the project for future purposes */
-const btnSave = q('#button-save');
+const btnSave = ElementSelect('#button-save');
 /* The below is the button to toggle between zip and bee_pack */
-const btnZipTypeToggle = q('#button-zip-type-toggle');
+const btnZipTypeToggle = ElementSelect('#button-zip-type-toggle');
+/* The below is the button to merge bee_pack */
+const btnMergePack = ElementSelect('#button-merge-pack');
 
 /* if ever find ye an explanation of the following, please inform me. -IMyself*/
 function removeAllChildren(el) {
@@ -29,7 +31,7 @@ function setupPackage(json={}) {
 	
 	// This isn't necessary. Packages can't be loaded by file yet.
 	// removeAllChildren(q('#pkg-container'));
-	q('#pkg-container').appendChild(pkg.html());
+	ElementSelect('#pkg-container').appendChild(pkg.html());
 
 	btnDownload.onclick = () => {
 		btnDownload.disabled = true;
@@ -41,14 +43,15 @@ function setupPackage(json={}) {
 			if (zipType == "zip") {
 
 				saveAs(x, `ucp_${pkg.idl}.zip`);
+				btnDownload.disabled = false;
+				btnDownload.innerHTML = 'Download .zip';
 			}
 			else if (zipType == "bee")
 			{
 				saveAs(x, `ucp_${pkg.idl}.bee_pack`);
+				btnDownload.disabled = false;
+				btnDownload.innerHTML = 'Download .bee';
 			};
-
-			btnDownload.disabled = false;
-			btnDownload.innerText = 'Download';
 
 		}).catch((err)=>{
 			
@@ -98,10 +101,16 @@ btnZipTypeToggle.onclick = function ()
 		btnDownload.innerHTML = "Download .zip"
 	};
 }
+btnMergePack.onclick = function ()
+{
+	alert("This button is in alpha developing state. No proper function yet available.")
+	/*var page = document.getElementById("mainHTML");
+	page += `<div id="grey-screen"></div>`*/
+}
 
 function beginAutosaveLoop() {
 
-	q('#pkg-container').addEventListener('input',()=>{
+	ElementSelect('#pkg-container').addEventListener('input',()=>{
 		btnSave.classList.add('needs-save');
 		btnSave.innerText = 'Save Now';
 		needsSave = true;
