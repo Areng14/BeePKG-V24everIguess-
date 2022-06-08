@@ -103,8 +103,9 @@ btnZipTypeToggle.onclick = function ()
 }
 btnMergePack.onclick = function ()
 {
-	var page = document.getElementById("mainHTML");
-	page += `<div id="grey-screen"></div>`
+	alert("This button is in alpha developing state. No proper function yet available.")
+	/*var page = document.getElementById("mainHTML");
+	page += `<div id="grey-screen"></div>`*/
 }
 
 function beginAutosaveLoop() {
