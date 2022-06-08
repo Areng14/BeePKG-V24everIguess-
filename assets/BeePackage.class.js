@@ -44,7 +44,7 @@ export class BeePackage extends ComponentBase {
 			'name': this.json.name,
 			'desc': this.json.desc
 		};
-
+		//Fix restore to be a button on the side with convert and merge
 		if (Object.keys(json).length > 0) {
 			alert( 'Your package was restored from your last session successfully. For security, files from your computer are not saved.' );
 		}

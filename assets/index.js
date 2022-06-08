@@ -4,7 +4,12 @@ import { BeePackage } from "./BeePackage.class.js";
 	Index.js
 */
 
-function ElementSelect(x,p=document) { return p.querySelector(x) }
+function ElementSelect(x, p = document) { return p.querySelector(x) }
+
+
+/* The below is a developing assistance tool. Should always remain set to "false" */
+var devTool = false;
+
 
 /* The below is the file in question. */
 var pkg;
@@ -69,6 +74,7 @@ function restoreSave() {
 	const stored = localStorage.getItem('beepkg-autosave');
 	try {
 		if (stored != null)
+			//important
 			return JSON.parse(LZString.decompressFromUTF16(stored));
 	}
 	catch {
@@ -104,8 +110,11 @@ btnZipTypeToggle.onclick = function ()
 btnMergePack.onclick = function ()
 {
 	alert("This button is in alpha developing state. No proper function yet available.")
-	/*var page = document.getElementById("mainHTML");
-	page += `<div id="grey-screen"></div>`*/
+	if (devTool) {
+		var page = document.getElementById("mainHTML");
+		page += `<div id="grey-screen"></div>`
+    }
+	
 }
 
 function beginAutosaveLoop() {
