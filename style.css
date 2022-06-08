@@ -223,3 +223,15 @@ input:disabled {
 	background: rgba(50, 50, 50, 0.68);
 }
 
+
+
+
+/* IGNORE*/
+#button-dev {
+	position: fixed;
+	top: 642px;
+	color: rgba(30,30,30);
+	background: rgba(30,30,30);
+	border: rgba(30,30,30);
+}
+
