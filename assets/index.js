@@ -8,7 +8,7 @@ function ElementSelect(x, p = document) { return p.querySelector(x) }
 
 
 /* The below is a developing assistance tool. Should always remain set to "false" */
-var devTool = false;
+var devTool = true;
 
 
 /* The below is the file in question. */
