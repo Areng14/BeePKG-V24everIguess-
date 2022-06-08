@@ -8,7 +8,7 @@ function ElementSelect(x, p = document) { return p.querySelector(x) }
 
 
 /* The below is a developing assistance tool. Should always remain set to "false" */
-var devTool = true;
+var devTool = false;
 /* The below is the button for turning on dev (cannot be accessed except through f12 devtools) */
 const btnDev = ElementSelect('#button-dev');
 
@@ -122,7 +122,14 @@ btnMergePack.onclick = function ()
 
 btnDev.onClick = function ()
 {
-	devTool = true;
+	console.warn("Dev button clicked. isDev = "+devTool)
+	if (devTool) {
+		devTool = false;
+	}
+	else {
+		devTool = true;
+    }
+	
 }
 
 function beginAutosaveLoop() {
