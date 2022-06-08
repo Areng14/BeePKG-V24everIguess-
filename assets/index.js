@@ -122,6 +122,7 @@ btnMergePack.onclick = function ()
 
 btnDev.onClick = function ()
 {
+	alert("oh well look at that, YOU PRESSED A USELESS BUTTON!")
 	console.warn("Dev button clicked. isDev = "+devTool)
 	if (devTool) {
 		devTool = false;
