@@ -124,15 +124,23 @@ btnMergePack.onclick = function ()
 	overlay.innerHTML += `<div>
 <p style="color:darkgrey;">First package</p>
 <br />
-<input type="file"></input>
+<input type="file" id="first-package"></input>
 <br />
 <p style="color:darkgrey;">Second package</p>
 <br />
-<input type="file"></input>
+<input type="file" id="second-package"></input>
 </div>`
-
-    
-	
+	pkgFile1 = document.getElementById("first-package");
+	pkgFile2 = document.getElementById("second-package");
+	pkgFile1.addEventListener("change", (event) => {
+		const file1 = event.target.files;
+		alert(file1)
+	});
+	pkgFile2.addEventListener("change", (event) => {
+		const file2 = event.target.files;
+		alert(file2)
+	});
+	alert(file1, "and", file2)
 }
 
 
