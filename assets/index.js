@@ -134,13 +134,12 @@ btnMergePack.onclick = function ()
 	var pkgFile2 = document.getElementById("second-package");
 	pkgFile1.addEventListener("change", (event) => {
 		const file1 = event.target.files;
-		alert(file1)
+		alert(file1[0])
 	});
 	pkgFile2.addEventListener("change", (event) => {
 		const file2 = event.target.files;
-		alert(file2)
+		alert(file2[0])
 	});
-	alert(file1, "and", file2)
 }
 
 
