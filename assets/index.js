@@ -133,7 +133,7 @@ btnMergePack.onclick = function ()
 	var pkgFile1 = document.getElementById("first-package");
 	var pkgFile2 = document.getElementById("second-package");
 	var setFiles = 0
-	const reader = FileReader();
+	const reader = new FileReader();
 	pkgFile1.addEventListener("change", (event) => {
 		const file1 = event.target.files;
 		alert(reader.readAsDataURL(file1[0]))
