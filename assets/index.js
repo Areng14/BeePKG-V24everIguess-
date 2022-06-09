@@ -124,22 +124,29 @@ btnMergePack.onclick = function ()
 	overlay.innerHTML += `<div>
 <p style="color:darkgrey;">First package</p>
 <br />
-<input type="file" id="first-package"></input>
+<input type="file" id="first-package" accept=".zip, .bee_pack"></input>
 <br />
 <p style="color:darkgrey;">Second package</p>
 <br />
-<input type="file" id="second-package"></input>
+<input type="file" id="second-package" accept=".zip, .bee_pack"></input>
 </div>`
 	var pkgFile1 = document.getElementById("first-package");
 	var pkgFile2 = document.getElementById("second-package");
+	var setFiles = 0
+	const reader = FileReader();
 	pkgFile1.addEventListener("change", (event) => {
 		const file1 = event.target.files;
-		alert(file1[0])
+		alert(reader.readAsDataURL(file1[0]))
+		setFiles++;
 	});
 	pkgFile2.addEventListener("change", (event) => {
 		const file2 = event.target.files;
-		alert(file2[0])
+		alert(reader.readAsDataURL(file2[0]))
+		setFiles++;
 	});
+	if (setFiles = 2) {
+
+    }
 }
 
 
