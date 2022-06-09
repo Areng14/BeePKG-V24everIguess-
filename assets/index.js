@@ -143,12 +143,12 @@ btnMergePack.onclick = function ()
 	const reader = new FileReader();
 	pkgFile1.addEventListener("change", (event) => {
 		const file1 = event.target.files;
-		debug.warn(reader.readAsDataURL(file1[0]))
+		debug.warn(reader.readAsText(file1))
 		setFiles++;
 	});
 	pkgFile2.addEventListener("change", (event) => {
 		const file2 = event.target.files;
-		debug.warn(reader.readAsDataURL(file2[0]))
+		debug.warn(reader.readAsText(file2))
 		setFiles++;
 	});
 	if (setFiles = 2) {
@@ -175,8 +175,21 @@ function beginAutosaveLoop() {
 }
 
 /* restore package should be encapsled by a button onClick function, but only after we get a way to add package w/out restore */
+document.getElementById("package-container").innerHTML += `
+	< section id="might-delete" >
+	<input data-return="name" placeholder="Package Name"><br>
+		<input data-return="desc" placeholder="Package Description"><br>
+			</section>
+			<section>
+				<button data-click="add-item">Add Item</button>
+				<section id="section-items">
+				</section>
+			</section>
+		`;
 btnRestoreSave.onclick = function () {
-	setupPackage(restoreSave())
-	beginAutosaveLoop()
+	document.getElementById("might-delete").removeAllChildren();
+	document.getElementById("might-delete").remove();
+	setupPackage(restoreSave());
+	beginAutosaveLoop();
 }
 
