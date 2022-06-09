@@ -130,8 +130,8 @@ btnMergePack.onclick = function ()
 <br />
 <input type="file" id="second-package"></input>
 </div>`
-	pkgFile1 = document.getElementById("first-package");
-	pkgFile2 = document.getElementById("second-package");
+	var pkgFile1 = document.getElementById("first-package");
+	var pkgFile2 = document.getElementById("second-package");
 	pkgFile1.addEventListener("change", (event) => {
 		const file1 = event.target.files;
 		alert(file1)
