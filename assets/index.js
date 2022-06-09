@@ -7,12 +7,6 @@ import { BeePackage } from "./BeePackage.class.js";
 function ElementSelect(x, p = document) { return p.querySelector(x) }
 
 
-/* The below is a developing assistance tool. Should always remain set to "false" */
-var devTool = false;
-/* The below is the button for turning on dev (cannot be accessed except through f12 devtools) */
-const btnDev = ElementSelect('#button-dev');
-
-
 /* The below is the file in question. */
 var pkg;
 /* The below is the variable declaring whether or not it is a zip or a bee_pack */
@@ -112,26 +106,22 @@ btnZipTypeToggle.onclick = function ()
 btnMergePack.onclick = function ()
 {
 	alert("This button is in alpha developing state. No proper function yet available.")
-	if (devTool) {
-		console.warn("logged in as dev, running package.")
-		var page = document.getElementById("mainHTML");
-		page.innerHTML += `<div id="grey-screen"></div>`
-    }
+
+	//Disable screen, overlay with merger container.
+	/* Greyed out screen */
+	var page = document.getElementById("mainHTML");
+	var btnMerge = document.getElementById("button-merge-pack")
+	var btnZip = document.getElementById("button-zip-type-toggle")
+	page.innerHTML += `<div id="grey-screen"></div>`;
+	btnMerge.disabled = true;
+	btnZip.disabled = true;
+	/* Merger overlay */
+	overlay = document.getElementById("grey-screen")
+	overlay.innerHTML += `<div id="container" style="position:fixed;"></div>`
+    
 	
 }
 
-btnDev.onClick = function ()
-{
-	alert("oh well look at that, YOU PRESSED A USELESS BUTTON!")
-	console.warn("Dev button clicked. isDev = "+devTool)
-	if (devTool) {
-		devTool = false;
-	}
-	else {
-		devTool = true;
-    }
-	
-}
 
 function beginAutosaveLoop() {
 
