@@ -234,11 +234,17 @@ input:disabled {
 	border-radius: 70px;
 }
 
-#merger-info {
-	position: fixed;
-	width: 50%;
-	height: 70%;
-	top: 80px;
-	right: 185px;
+#merger-input {
+	position: absolute;
+	width: 60%;
+	height: 65%;
+	left: 20px;
+	top: 70px;
 }
-
+#merger-output {
+	position: absolute;
+	width: 50%;
+	height: 65%;
+	right: 20px;
+	top: 70px;
+}

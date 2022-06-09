@@ -119,10 +119,17 @@ btnMergePack.onclick = function ()
 	var overlay = document.getElementById("grey-screen")
 	overlay.innerHTML += `<div id="merger-overlay"></div>`
 	overlay = document.getElementById("merger-overlay")
-	overlay.innerHTML += `<div id="merger-info"></div>`
-	overlay = document.getElementById("merger-info")
-	overlay.innerHTML += `<div><p style="color:white;">First package           Second package</p>
-<br /><input type="file"></input><input type="file"></input></div?`
+	overlay.innerHTML += `<div id="merger-input"></div>`
+	overlay = document.getElementById("merger-input")
+	overlay.innerHTML += `<div>
+<p style="color:darkgrey;">First package</p>
+<br />
+<input type="file"></input>
+<br />
+<p style="color:darkgrey;">Second package</p>
+<br />
+<input type="file"></input>
+</div>`
 
     
 	
