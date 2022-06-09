@@ -120,6 +120,9 @@ btnMergePack.onclick = function ()
 	overlay.innerHTML += `<div id="merger-overlay"></div>`
 	overlay = document.getElementById("merger-overlay")
 	overlay.innerHTML += `<div id="merger-info"></div>`
+	overlay = document.getElementById("merger-info")
+	overlay.innerHTML += `<input type="file">First pack</input>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="file">Second pack</input>`
+
     
 	
 }
