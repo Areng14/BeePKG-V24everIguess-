@@ -19,6 +19,8 @@ const btnSave = ElementSelect('#button-save');
 const btnZipTypeToggle = ElementSelect('#button-zip-type-toggle');
 /* The below is the button to merge bee_pack */
 const btnMergePack = ElementSelect('#button-merge-pack');
+/* The below is the restore save button*/
+const btnRestoreSave = ElementSelect('#button-restore-save');
 
 /* if ever find ye an explanation of the following, please inform me. -IMyself*/
 function removeAllChildren(el) {
@@ -103,6 +105,8 @@ btnZipTypeToggle.onclick = function ()
 		btnDownload.innerHTML = "Download .zip"
 	};
 }
+
+/* I'm sorry for the following poorly written code. */
 btnMergePack.onclick = function ()
 {
 	alert("This button is in alpha developing state. No proper function yet available.")
@@ -115,12 +119,14 @@ btnMergePack.onclick = function ()
 	page.innerHTML += `<div id="grey-screen"></div>`;
 	btnMerge.disabled = true;
 	btnZip.disabled = true;
-	/* Merger overlay */
+
+	/* Adds Merger overlay */
 	var overlay = document.getElementById("grey-screen")
 	overlay.innerHTML += `<div id="merger-overlay"></div>`
 	overlay = document.getElementById("merger-overlay")
 	overlay.innerHTML += `<div id="merger-input"></div>`
 	overlay = document.getElementById("merger-input")
+	/*adds merger UI*/
 	overlay.innerHTML += `<div>
 <p style="color:darkgrey;">First package</p>
 <br />
@@ -130,18 +136,19 @@ btnMergePack.onclick = function ()
 <br />
 <input type="file" id="second-package" accept=".zip, .bee_pack"></input>
 </div>`
+	/* Logic for grabbing and manipulating uploaded files. */
 	var pkgFile1 = document.getElementById("first-package");
 	var pkgFile2 = document.getElementById("second-package");
 	var setFiles = 0
 	const reader = new FileReader();
 	pkgFile1.addEventListener("change", (event) => {
 		const file1 = event.target.files;
-		alert(reader.readAsDataURL(file1[0]))
+		debug.warn(reader.readAsDataURL(file1[0]))
 		setFiles++;
 	});
 	pkgFile2.addEventListener("change", (event) => {
 		const file2 = event.target.files;
-		alert(reader.readAsDataURL(file2[0]))
+		debug.warn(reader.readAsDataURL(file2[0]))
 		setFiles++;
 	});
 	if (setFiles = 2) {
@@ -167,5 +174,9 @@ function beginAutosaveLoop() {
 	}, 1000*30 )
 }
 
-setupPackage(restoreSave())
-beginAutosaveLoop()
+/* restore package should be encapsled by a button onClick function, but only after we get a way to add package w/out restore */
+btnRestoreSave.onclick = function () {
+	setupPackage(restoreSave())
+	beginAutosaveLoop()
+}
+
