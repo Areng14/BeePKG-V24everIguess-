@@ -222,4 +222,7 @@ input:disabled {
 	height: 100%;
 	background: rgba(50, 50, 50, 0.68);
 }
-
+#button-dev{
+	position: fixed;
+	top: 743px;
+}
