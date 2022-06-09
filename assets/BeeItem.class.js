@@ -104,7 +104,7 @@ export class BeeItem extends ComponentBase {
 					<option value="buttonball.3ds">Floor Button (Sphere)</option>
 				</optgroup>
 				<optgroup label="——— Custom ———">
-					<option disabled="true" value="custom">Custom (Disabled)</option>
+					<option value="custom">Custom</option>
 				</optgroup>
 			</select>
 			<br>
@@ -357,9 +357,7 @@ export class BeeItem extends ComponentBase {
 			"DefaultValue"	"0"
 			"Index"	"1"
 		}
-
 		${this.buttonTypeInstanceHandler}
-
 	}
 	"Exporting"
 	{
@@ -556,7 +554,7 @@ ${
 		await createFile(`items/${this.idl}/vbsp_config.cfg`,`//Comment lmao
 "Conditions" {
    "Condition" {
-      "Instance" "${this.id}"
+      "Instance" "<${this.id}>"
       "Result" {
             "Switch" {
                 "Flag" "instvar"
