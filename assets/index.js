@@ -117,7 +117,11 @@ btnMergePack.onclick = function ()
 	btnZip.disabled = true;
 	/* Merger overlay */
 	overlay = document.getElementById("grey-screen")
+	overlay.appendChild("div")
 	overlay.innerHTML += `<div id="merger-overlay"></div>`
+	overlay = document.getElementById("merger-overlay")
+	overlay.appendChild("div")
+	overlay.innerHTML += `<div id="merger-info"></div>`
     
 	
 }

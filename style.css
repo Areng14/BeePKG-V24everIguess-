@@ -229,14 +229,14 @@ input:disabled {
 	right: 150px;
 	width: 60%;
 	height: 80%;
-	background: rgba(50,50,50,.95);
-	border: 1.5px solid rgba(70,70,70, 1);
+	background: rgba(70,70,70,1);
+	border: 3px solid rgba(100,100,100, 1);
 	border-radius: 70px;
 }
+
 #merger-info {
 	position: fixed;
-	top: 50px;
-	right: 150px;
-	justify-content:center;
+	top: 200px;
+	right: 400px;
 }
 
