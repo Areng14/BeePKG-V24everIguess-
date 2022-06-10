@@ -180,7 +180,7 @@ document.getElementById("pkg-container").innerHTML += `
 				<input data-return="name" placeholder="Package Name"><br>
 				<input data-return="desc" placeholder="Package Description"><br>
 			</section>
-			<section>
+			<section id="might-delete">
 				<button data-click="add-item">Add Item</button>
 				<section id="section-items">
 				</section>
