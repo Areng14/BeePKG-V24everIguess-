@@ -187,7 +187,6 @@ document.getElementById("pkg-container").innerHTML += `
 			</section>
 		`;
 btnRestoreSave.onclick = function () {
-	document.getElementById("might-delete").removeAllChildren();
 	document.getElementById("might-delete").remove();
 	setupPackage(restoreSave());
 	beginAutosaveLoop();
