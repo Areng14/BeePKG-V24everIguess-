@@ -175,6 +175,17 @@ function beginAutosaveLoop() {
 }
 
 /* restore package should be encapsled by a button onClick function, but only after we get a way to add package w/out restore */
+document.getElementById("pkg-container").innerHTML += `
+			<section id="might-delete">
+				<input data-return="name" placeholder="Package Name"><br>
+				<input data-return="desc" placeholder="Package Description"><br>
+			</section>
+			<section>
+				<button data-click="add-item">Add Item</button>
+				<section id="section-items">
+				</section>
+			</section>
+		`;
 btnRestoreSave.onclick = function () {
 	document.getElementById("might-delete").removeAllChildren();
 	document.getElementById("might-delete").remove();
