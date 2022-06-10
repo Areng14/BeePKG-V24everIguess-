@@ -186,6 +186,9 @@ document.getElementById("pkg-container").innerHTML += `
 				</section>
 			</section>
 		`;
+this._templateClickActions = {
+	'add-item': () => { this.createItemComponent(); }
+};
 btnRestoreSave.onclick = function () {
 	document.getElementById("might-delete1").remove();
 	document.getElementById("might-delete2").remove();
