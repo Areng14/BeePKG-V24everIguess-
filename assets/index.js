@@ -186,8 +186,8 @@ document.getElementById("pkg-container").innerHTML += `
 				</section>
 			</section>
 		`;
-const inpdeleteable = q.querySelector(`*[data-click="${key}"]`)
-inp.onclick = () => { this._templateClickActions[key](inp) }
+const inpdeleteable = document.querySelector(`*[data-click="${key}"]`)
+inpdeleteable.onclick = () => { this._templateClickActions[key](inpdeleteable) }
 btnRestoreSave.onclick = function () {
 	document.getElementById("might-delete1").remove();
 	document.getElementById("might-delete2").remove();
