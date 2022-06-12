@@ -72,11 +72,11 @@ function restoreSave(loadSave = false) {
 	var stored = ''
 	if (loadSave == true) {
 		var stored = null;
-		debug.warn("ok, so you set it to null, you feeling proud?")
+		console.warn("ok, so you set it to null, you feeling proud?")
 	}
 	else {
 		var stored = localStorage.getItem('beepkg-autosave');
-		debug.warn("OH, YOU FIGURED OUT HOW TO GIVE THINGS VALUES")
+		console.warn("OH, YOU FIGURED OUT HOW TO GIVE THINGS VALUES")
 	}
 	
 	try {
