@@ -69,7 +69,7 @@ function setupPackage(json={}) {
 }
 
 function restoreSave(loadSave = false) {
-	if (loadSave) {
+	if (loadSave == true) {
 		const stored = null;
 	}
 	else {
@@ -83,7 +83,7 @@ function restoreSave(loadSave = false) {
 		
 	}
 	catch {
-		console.warn( 'Your package could not be recovered successfully.', stored );
+		console.warn( 'Your package could not be recovered successfully.' );
 		alert('Your package could not be recovered successfully. Save dumped to console.');
 	}
 	return {}
@@ -200,7 +200,7 @@ inpdeleteable.onclick = function() { this._templateClickActions[key](inpdeleteab
 btnRestoreSave.onclick = function () {
 //	document.getElementById("might-delete1").remove();
 //	document.getElementById("might-delete2").remove();
-	setupPackage(restoreSave());
+	setupPackage(restoreSave(false));
 	beginAutosaveLoop();
 }
 
