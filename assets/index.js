@@ -68,12 +68,19 @@ function setupPackage(json={}) {
 	}
 }
 
-function restoreSave() {
-	const stored = localStorage.getItem('beepkg-autosave');
+function restoreSave(loadSave = false) {
+	if (loadSave) {
+		const stored = null;
+	}
+	else {
+		const stored = localStorage.getItem('beepkg-autosave');
+	}
+	
 	try {
 		if (stored != null)
 			//important
 			return JSON.parse(LZString.decompressFromUTF16(stored));
+		
 	}
 	catch {
 		console.warn( 'Your package could not be recovered successfully.', stored );
@@ -188,7 +195,8 @@ function beginAutosaveLoop() {
 		`;
 const inpdeleteable = document.querySelector(`*[data-click="add-item"]`)
 inpdeleteable.onclick = function() { this._templateClickActions[key](inpdeleteable) }*/
-setupPackage(null);
+//setupPackage();
+restoreSave(true);
 btnRestoreSave.onclick = function () {
 	document.getElementById("might-delete1").remove();
 	document.getElementById("might-delete2").remove();
