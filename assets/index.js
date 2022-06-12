@@ -27,8 +27,8 @@ function removeAllChildren(el) {
 	while (el.lastChild) { el.removeChild(el.lastChild) }
 }
 
-function setupPackage(json={}) {
-	pkg = new BeePackage(json);
+function setupPackage(json={}, isNotAutosave) {
+	pkg = new BeePackage(json, isNotAutosave);
 
 	// Run HTML setup, append generated html to container
 	
@@ -185,24 +185,12 @@ function beginAutosaveLoop() {
 }
 
 /* restore package should be encapsled by a button onClick function, but only after we get a way to add package w/out restore */
-/*document.getElementById("pkg-container").innerHTML += `
-			<section id="might-delete1">
-				<input data-return="name" placeholder="Package Name"><br>
-				<input data-return="desc" placeholder="Package Description"><br>
-			</section>
-			<section id="might-delete2">
-				<button data-click="add-item">Add Item</button>
-				<section id="section-items">
-				</section>
-			</section>
-		`;
-const inpdeleteable = document.querySelector(`*[data-click="add-item"]`)
-inpdeleteable.onclick = function() { this._templateClickActions[key](inpdeleteable) }*/
-setupPackage(restoreSave(true));
+
+setupPackage(restoreSave(true), true);
 btnRestoreSave.onclick = function () {
-//	document.getElementById("might-delete1").remove();
-//	document.getElementById("might-delete2").remove();
-	setupPackage(restoreSave(false));
+	document.getElementById("might-delete1").remove();
+	document.getElementById("might-delete2").remove();
+	setupPackage(restoreSave(false), false);
 	beginAutosaveLoop();
 }
 
