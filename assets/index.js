@@ -196,6 +196,8 @@ btnForceSave.onclick = function () {
 }
 
 btnRestoreSave.onclick = function () {
+	btnForceSave.disabled = true;
+	btnRestoreSave.disabled = true;
 	document.getElementById("might-delete1").remove();
 	document.getElementById("might-delete2").remove();
 	setupPackage(restoreSave(false), false);
