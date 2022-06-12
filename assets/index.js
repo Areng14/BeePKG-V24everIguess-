@@ -69,11 +69,14 @@ function setupPackage(json={}) {
 }
 
 function restoreSave(loadSave = false) {
+	var stored = ''
 	if (loadSave == true) {
-		const stored = null;
+		var stored = null;
+		debug.warn("ok, so you set it to null, you feeling proud?")
 	}
 	else {
-		const stored = localStorage.getItem('beepkg-autosave');
+		var stored = localStorage.getItem('beepkg-autosave');
+		debug.warn("OH, YOU FIGURED OUT HOW TO GIVE THINGS VALUES")
 	}
 	
 	try {
