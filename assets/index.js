@@ -191,6 +191,8 @@ function beginAutosaveLoop() {
 setupPackage(restoreSave(true), true);
 btnForceSave.onclick = function () {
 	beginAutosaveLoop();
+	btnForceSave.disabled = true;
+	btnRestoreSave.disabled = true;
 }
 
 btnRestoreSave.onclick = function () {
