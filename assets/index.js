@@ -22,7 +22,7 @@ const btnMergePack = ElementSelect('#button-merge-pack');
 /* The below is the restore save button*/
 const btnRestoreSave = ElementSelect('#button-restore-save');
 /* The below is for SAVING AGAIN */
-const btnForceSave = ElementSelect(`#button-force-save`)
+const btnForceSave = ElementSelect('#button-force-save')
 
 /* if ever find ye an explanation of the following, please inform me. -IMyself*/
 function removeAllChildren(el) {
