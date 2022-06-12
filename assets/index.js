@@ -21,6 +21,8 @@ const btnZipTypeToggle = ElementSelect('#button-zip-type-toggle');
 const btnMergePack = ElementSelect('#button-merge-pack');
 /* The below is the restore save button*/
 const btnRestoreSave = ElementSelect('#button-restore-save');
+/* The below is for SAVING AGAIN */
+const btnForceSave = ElementSelect(`#button-force-save`)
 
 /* if ever find ye an explanation of the following, please inform me. -IMyself*/
 function removeAllChildren(el) {
@@ -187,6 +189,10 @@ function beginAutosaveLoop() {
 /* restore package should be encapsled by a button onClick function, but only after we get a way to add package w/out restore */
 
 setupPackage(restoreSave(true), true);
+btnForceSave.onclick = function () {
+	beginAutosaveLoop();
+}
+
 btnRestoreSave.onclick = function () {
 	document.getElementById("might-delete1").remove();
 	document.getElementById("might-delete2").remove();
