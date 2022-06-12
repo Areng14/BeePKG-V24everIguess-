@@ -100,7 +100,8 @@ btnSave.onclick = function() {
 	if (!needsSave) { return }
 	this.classList.remove('needs-save');
 	btnSave.innerText = 'Changes Saved';
-	localStorage.setItem( 'beepkg-autosave', pkg.compress() );
+	localStorage.setItem('beepkg-autosave', pkg.compress());
+	console.log("saving...")
 	needsSave = false;
 }
 
@@ -193,6 +194,7 @@ btnForceSave.onclick = function () {
 	beginAutosaveLoop();
 	btnForceSave.disabled = true;
 	btnRestoreSave.disabled = true;
+	btnSave.onclick();
 }
 
 btnRestoreSave.onclick = function () {
