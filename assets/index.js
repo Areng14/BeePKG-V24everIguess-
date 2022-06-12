@@ -83,8 +83,8 @@ function restoreSave(loadSave = false) {
 		
 	}
 	catch {
-		console.warn( 'Your package could not be recovered successfully.' );
-		alert('Your package could not be recovered successfully. Save dumped to console.');
+		console.warn(`stored doesn't work. maybe its null?` );
+		
 	}
 	return {}
 }
@@ -195,12 +195,11 @@ function beginAutosaveLoop() {
 		`;
 const inpdeleteable = document.querySelector(`*[data-click="add-item"]`)
 inpdeleteable.onclick = function() { this._templateClickActions[key](inpdeleteable) }*/
-//setupPackage();
-//restoreSave(true);
+setupPackage(restoreSave(true));
 btnRestoreSave.onclick = function () {
 //	document.getElementById("might-delete1").remove();
 //	document.getElementById("might-delete2").remove();
-	setupPackage(restoreSave(false));
+	setupPackage(restoreSave(true));
 	beginAutosaveLoop();
 }
 
