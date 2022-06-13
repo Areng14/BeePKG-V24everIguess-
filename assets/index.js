@@ -161,7 +161,7 @@ btnMergePack.onclick = function ()
 	mergeFile1.onchange = () => {
 		const selectedFile = mergeFile1.files[0];
 		console.log(selectedFile);
-		mergeFile1.LZString.decompressFromUTF16;
+		mergeFile1.LZString.decompressFromUTF16();
 		console.log(mergeFile1);
 		console.log(mergeFile1.files[0]);
 	};
@@ -171,7 +171,7 @@ btnMergePack.onclick = function ()
 		const selectedFile = mergeFile2.files[0];
 		console.log(selectedFile);
 
-		mergeFile2.LZString.decompressFromUTF16;
+		mergeFile2.LZString.decompressFromUTF16();
 		console.log(mergeFile2);
 		console.log(mergeFile2.files[0]);
 	};
