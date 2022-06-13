@@ -159,7 +159,7 @@ btnMergePack.onclick = function ()
 	var mergeFile1 = document.getElementById('first-package');
 
 	mergeFile1.onchange = () => {
-		for (x = 0; x < mergeFile1.files.length; x++) {
+		for (var x = 0; x < mergeFile1.files.length; x++) {
 			console.log(mergeFile1.files[x]);
         }
 		
@@ -167,7 +167,7 @@ btnMergePack.onclick = function ()
 		console.log("is changed")
 	var mergeFile2 = document.getElementById('second-package');
 	mergeFile2.onchange = () => {
-		for (x = 0; x < mergeFile2.files.length; x++) {
+		for (var x = 0; x < mergeFile2.files.length; x++) {
 			console.log(mergeFile2.files[x]);
 		}
 	};
