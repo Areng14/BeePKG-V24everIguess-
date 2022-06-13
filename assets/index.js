@@ -159,16 +159,17 @@ btnMergePack.onclick = function ()
 	var mergeFile1 = document.getElementById('first-package');
 
 	mergeFile1.onchange = () => {
-		const selectedFile = mergeFile1.files[0];
-		console.log(selectedFile);
-		console.log(mergeFile1);
+		for (x = 0; x < mergeFile1.files.length; x++) {
+			console.log(mergeFile1.files[x]);
+        }
+		
 	};
 		console.log("is changed")
 	var mergeFile2 = document.getElementById('second-package');
 	mergeFile2.onchange = () => {
-		const selectedFile = mergeFile2.files[0];
-		console.log(selectedFile);
-		console.log(mergeFile2);
+		for (x = 0; x < mergeFile2.files.length; x++) {
+			console.log(mergeFile2.files[x]);
+		}
 	};
 	if (setFiles = 2) {
 
@@ -196,7 +197,7 @@ function beginAutosaveLoop() {
 /* restore package should be encapsled by a button onClick function, but only after we get a way to add package w/out restore */
 
 setupPackage(restoreSave(true), true);
-console.log("booting up version 2.7b1.2")
+console.log("booting up version 2.7b1.3")
 btnForceSave.onclick = function () {
 	beginAutosaveLoop();
 	btnForceSave.disabled = true;
