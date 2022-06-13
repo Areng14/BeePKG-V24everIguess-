@@ -158,13 +158,13 @@ btnMergePack.onclick = function ()
 		console.log("is changed")
 	var mergeFile1 = document.getElementById('first-package');
 	mergeFile1.onchange = () => {
-		const selectedFile = fileInput.files[0];
+		const selectedFile = mergeFile1.files[0];
 		console.log(selectedFile);
 	};
 		console.log("is changed")
-	var mergeFile1 = document.getElementById('second-package');
+	var mergeFile2 = document.getElementById('second-package');
 	mergeFile2.onchange = () => {
-		const selectedFile = fileInput.files[0];
+		const selectedFile = mergeFile2.files[0];
 		console.log(selectedFile);
 	};
 	if (setFiles = 2) {
