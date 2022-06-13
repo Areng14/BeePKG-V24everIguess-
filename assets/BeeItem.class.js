@@ -50,7 +50,6 @@ export class BeeItem extends ComponentBase {
 			'item-embed': (x) => { this.json.embed = x.checked }
 		}
 
-		//replacements of those  above editoritem sections (for the case of extra buttons pushed on BeePKG)
 		this._templateReplacements = {
 			'name': this.json.name,
 			'desc': this.json.desc,

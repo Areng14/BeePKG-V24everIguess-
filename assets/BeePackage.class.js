@@ -61,7 +61,7 @@ export class BeePackage extends ComponentBase {
 			'name': this.json.name,
 			'desc': this.json.desc
 		};
-		//Fix restore to allow NOT RESTORE
+
 		if (Object.keys(json).length > 0) {
 			alert( 'Your package was restored from your last session successfully. For security, files from your computer are not saved.' );
 		}
@@ -95,6 +95,7 @@ export class BeePackage extends ComponentBase {
 	compress() {
 		return LZString.compressToUTF16(JSON.stringify(this.serialize()));
 	}
+
 
 	async export() {
 		console.log(`[${this.id}] Starting...`);

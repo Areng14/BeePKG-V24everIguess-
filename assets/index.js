@@ -156,14 +156,20 @@ btnMergePack.onclick = function ()
 	var setFiles = 0
 	const reader = new FileReader();
 	pkgFile1.addEventListener("change", (event) => {
-		const file1 = event.target.files;
-		debug.warn(reader.readAsText(file1))
-		setFiles++;
+		console.log("is changed")
+		const fileInput = document.getElementById('first-package');
+		fileInput.onchange = () => {
+			const selectedFile = fileInput.files[0];
+			console.log(selectedFile);
+		}
 	});
 	pkgFile2.addEventListener("change", (event) => {
-		const file2 = event.target.files;
-		debug.warn(reader.readAsText(file2))
-		setFiles++;
+		console.log("is changed")
+		const fileInput = document.getElementById('second-package');
+		fileInput.onchange = () => {
+			const selectedFile = fileInput.files[0];
+			console.log(selectedFile);
+		}
 	});
 	if (setFiles = 2) {
 
