@@ -124,49 +124,6 @@ btnMergePack.onclick = function ()
 {
 	alert("This button is in alpha developing state. No proper function yet available.")
 
-	//Disable screen, overlay with merger container.
-	/* Greyed out screen */
-	var page = document.getElementById("mainHTML");
-	var btnMerge = document.getElementById("button-merge-pack")
-	var btnZip = document.getElementById("button-zip-type-toggle")
-	page.innerHTML += `<div id="grey-screen"></div>`;
-	btnMerge.disabled = true;
-	btnZip.disabled = true;
-
-	/* Adds Merger overlay */
-	var overlay = document.getElementById("grey-screen")
-	overlay.innerHTML += `<div id="merger-overlay"></div>`
-	overlay = document.getElementById("merger-overlay")
-	overlay.innerHTML += `<div id="merger-input"></div>`
-	overlay = document.getElementById("merger-input")
-	/*adds merger UI*/
-	overlay.innerHTML += `<div>
-<p style="color:darkgrey;">First package</p>
-<br />
-<input type="file" id="first-package" accept=".zip, .bee_pack"></input>
-<br />
-<p style="color:darkgrey;">Second package</p>
-<br />
-<input type="file" id="second-package" accept=".zip, .bee_pack"></input>
-</div>`
-	/* Logic for grabbing and manipulating uploaded files. */
-	var pkgFile1 = document.getElementById("first-package");
-	var pkgFile2 = document.getElementById("second-package");
-	var setFiles = 0
-	const reader = new FileReader();
-	pkgFile1.addEventListener("change", (event) => {
-		const file1 = event.target.files;
-		debug.warn(reader.readAsText(file1))
-		setFiles++;
-	});
-	pkgFile2.addEventListener("change", (event) => {
-		const file2 = event.target.files;
-		debug.warn(reader.readAsText(file2))
-		setFiles++;
-	});
-	if (setFiles = 2) {
-
-    }
 }
 
 
