@@ -155,22 +155,11 @@ btnMergePack.onclick = function ()
 	var pkgFile2 = document.getElementById("second-package");
 	var setFiles = 0
 	const reader = new FileReader();
+	pkgFile1.onchange = function () {
 		console.log("is changed")
-	var mergeFile1 = document.getElementById('first-package');
-
-	mergeFile1.onchange = () => {
-		for (var x = 0; x < mergeFile1.files.length; x++) {
-			console.log(mergeFile1.readAsArrayBuffer(Blob));
-        }
-		
-	};
-		console.log("is changed")
-	var mergeFile2 = document.getElementById('second-package');
-	mergeFile2.onchange = () => {
-		for (var x = 0; x < mergeFile2.files.length; x++) {
-			console.log(mergeFile2.readAsArrayBuffer(Blob));
-		}
-	};
+		firstPack = pkgFile1.onchange.target.files
+		console.log(firstPack)
+	}
 	if (setFiles = 2) {
 
 	}
