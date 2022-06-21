@@ -155,7 +155,7 @@ btnMergePack.onclick = function ()
 	var pkgFile2 = document.getElementById("second-package");
 	var setFiles = 0
 	const reader = new FileReader();
-	var $result = $("#result");
+	/*var $result = $("#result");
 	$("#first-package").on("change", function (evt) {
 		// remove content
 		$result.html("");
@@ -198,11 +198,11 @@ btnMergePack.onclick = function ()
 			handleFile(filesInPackage1[i]);
 		}
 		console.log(filesInPackage1);
-	});
+	});*/
 
-	/*pkgFile1.onchange = function () {
-		console.log(filesInPackage1);
-	}*/
+	pkgFile1.onchange = function () {
+		console.log(reader.readAsArrayBuffer(pkgFile1));
+	}
 	if (setFiles = 2) {
 
 	}
@@ -229,7 +229,7 @@ function beginAutosaveLoop() {
 /* restore package should be encapsled by a button onClick function, but only after we get a way to add package w/out restore */
 
 setupPackage(restoreSave(true), true);
-console.log("booting up version 2.7a1.6 N/A 1.5")
+console.log("booting up version 2.7a1.6 DG 1")
 btnForceSave.onclick = function () {
 	beginAutosaveLoop();
 	btnForceSave.disabled = true;
