@@ -200,7 +200,7 @@ btnMergePack.onclick = function ()
 	});
 
 	pkgFile1.onchange = function () {
-		debug.log(filesInPackage1);
+		console.log(filesInPackage1);
 	}
 	if (setFiles = 2) {
 
