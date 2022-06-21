@@ -155,6 +155,50 @@ btnMergePack.onclick = function ()
 	var pkgFile2 = document.getElementById("second-package");
 	var setFiles = 0
 	const reader = new FileReader();
+	var $result = $("#result");
+	$("#first-package").on("change", function (evt) {
+		// remove content
+		$result.html("");
+		// be sure to show the results
+		$("#result_block").removeClass("hidden").addClass("show");
+
+		// Closure to capture the file information.
+		function handleFile(f) {
+			var $title = $("<h4>", {
+				text: f.name
+			});
+			var $fileContent = $("<ul>");
+			$result.append($title);
+			$result.append($fileContent);
+
+			var dateBefore = new Date();
+			JSZip.loadAsync(f)                                   // 1) read the Blob
+				.then(function (zip) {
+					var dateAfter = new Date();
+					$title.append($("<span>", {
+						"class": "small",
+						text: " (loaded in " + (dateAfter - dateBefore) + "ms)"
+					}));
+
+					zip.forEach(function (relativePath, zipEntry) {  // 2) print entries
+						$fileContent.append($("<li>", {
+							text: zipEntry.name
+						}));
+					});
+				}, function (e) {
+					$result.append($("<div>", {
+						"class": "alert alert-danger",
+						text: "Error reading " + f.name + ": " + e.message
+					}));
+				});
+		}
+
+		var files = evt.target.files;
+		for (var i = 0; i < files.length; i++) {
+			handleFile(files[i]);
+		}
+	});
+
 	pkgFile1.onchange = function () {
 		console.log("is changed")
 		firstPack = pkgFile1.onchange.target.files
@@ -186,7 +230,7 @@ function beginAutosaveLoop() {
 /* restore package should be encapsled by a button onClick function, but only after we get a way to add package w/out restore */
 
 setupPackage(restoreSave(true), true);
-console.log("booting up version 2.7b1.5")
+console.log("booting up version 2.7a1.6 N/A")
 btnForceSave.onclick = function () {
 	beginAutosaveLoop();
 	btnForceSave.disabled = true;
