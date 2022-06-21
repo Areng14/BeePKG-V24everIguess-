@@ -200,9 +200,28 @@ btnMergePack.onclick = function ()
 		console.log(filesInPackage1);
 	});*/
 
-	pkgFile1.onchange = function () {
-		console.log(reader.readAsArrayBuffer(pkgFile1));
-	}
+	/*pkgFile1.onchange = function () {
+		for (x = 0; x < reader.readAsArrayBuffer(pkgFile1).length(); x++) {
+			console.log(reader.readAsArrayBuffer(pkgFile1).files);
+        }
+		
+	}*/
+	var mergeFile1 = document.getElementById('first-package');
+
+	mergeFile1.onchange = () => {
+		for (var x = 0; x < mergeFile1.files.length; x++) {
+			console.log(mergeFile1.readAsArrayBuffer(Blob));
+		}
+		console.log("is changed")
+	};
+	
+	var mergeFile2 = document.getElementById('second-package');
+	mergeFile2.onchange = () => {
+		for (var x = 0; x < mergeFile2.files.length; x++) {
+			console.log(mergeFile2.readAsArrayBuffer(Blob));
+		}
+		console.log("is changed")
+	};
 	if (setFiles = 2) {
 
 	}
@@ -229,7 +248,7 @@ function beginAutosaveLoop() {
 /* restore package should be encapsled by a button onClick function, but only after we get a way to add package w/out restore */
 
 setupPackage(restoreSave(true), true);
-console.log("booting up version 2.7a1.6 DG 1")
+console.log("booting up version 2.7a1.6 N/A 1.3")
 btnForceSave.onclick = function () {
 	beginAutosaveLoop();
 	btnForceSave.disabled = true;
