@@ -230,7 +230,7 @@ function beginAutosaveLoop() {
 /* restore package should be encapsled by a button onClick function, but only after we get a way to add package w/out restore */
 
 setupPackage(restoreSave(true), true);
-console.log("booting up version 2.7a1.6 N/A")
+console.log("booting up version 2.7a1.6 N/A 1.2")
 btnForceSave.onclick = function () {
 	beginAutosaveLoop();
 	btnForceSave.disabled = true;

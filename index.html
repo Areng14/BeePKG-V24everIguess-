@@ -1,21 +1,31 @@
 <!DOCTYPE html>
 <html id="mainHTML" lang="en-US">
-	<head>
-		<title>BEEPKG-ReMade-V1</title>
-		
-		<meta property="og:title" content="BeePKG-V2-ReMade">
-		<meta property="og:description" content="A new version of BEEPKG.">
-		<meta name="theme-color" content="#4565c6">
-		
-		<link rel="stylesheet" href="style.css">
-		<link rel="shortcut icon" type="image/png" href="favicon.png"/>
+<head>
+    <title>BEEPKG-ReMade-V1</title>
 
-		<style>
-			/* Temporary CSS until I reimplement collapsing. */
-			/*rip him- never got around to doing that*/
-			#section-items > section { height: auto; }
-		</style>
-	</head>
+    <meta property="og:title" content="BeePKG-V2-ReMade">
+    <meta property="og:description" content="A new version of BEEPKG.">
+    <meta name="theme-color" content="#4565c6">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="favicon.png" />
+
+    <style>
+        /* Temporary CSS until I reimplement collapsing. */
+        /*rip him- never got around to doing that*/
+        #section-items > section {
+            height: auto;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- https://github.com/eligrey/FileSaver.js -->
+    <script src="jszip/FileSaver.js"></script>
+    <script src="jszip/jszip.min.js"></script>
+    <!-- https://github.com/pieroxy/lz-string -->
+    <script src="assets/lz-string.min.js"></script>
+    <script type="module" src="assets/vtflib/Main.js"></script>
+    <script type="module" src="assets/index.js"></script>
+</head>
 	<body>
 		<div id="container">
 			<span id="button-save">Changes Saved</span>
@@ -25,13 +35,6 @@
 				<button id="btn-download" onclick="tryGenerate()">Download zip</button>
 			</section>
 		</div>
-		<!-- https://github.com/eligrey/FileSaver.js -->
-		<script src="jszip/FileSaver.js"></script>
-		<script src="jszip/jszip.min.js"></script>
-		<!-- https://github.com/pieroxy/lz-string -->
-		<script src="assets/lz-string.min.js"></script>
-		<script type="module" src="assets/vtflib/Main.js"></script>
-		<script type="module" src="assets/index.js"></script>
 		<div id="div-side-bar">
 			<button id="button-zip-type-toggle">to .bee_pack</button>
 			<br />
