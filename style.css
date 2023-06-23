@@ -201,7 +201,10 @@ input:disabled {
 #button-discord-link{
 	position: fixed;
 	bottom: 15px;
-	color: mediumpurple;
+	color: black;
+	background-color: mediumpurple;
+	outline-color: purple;
+	outline-style: dashed;
 	font-size: 13px;
 	transition: color 0.5s linear;
 	cursor: not-allowed;
