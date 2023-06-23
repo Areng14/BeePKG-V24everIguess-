@@ -2,7 +2,7 @@ import { ComponentBase } from "./ComponentBase.class.js";
 import { BeeItem } from "./BeeItem.class.js";
 
 export class BeePackage extends ComponentBase {
-	constructor(json={}) {
+	constructor(json={}, isNotAutosave) {
 		super();
 
 		this.json = {
@@ -16,8 +16,23 @@ export class BeePackage extends ComponentBase {
 		if (json.items instanceof Array) {
 			this.json.items = json.items.map(x => { return new BeeItem( this, x ); })
 		}
-
-		this._template = `
+		if (isNotAutosave) {
+			console.log("SO YOU CAN NOT WARN! anyways loading not autosave now")
+			this._template = `
+			<section id="might-delete1">
+				<input data-return="name" placeholder="Package Name"><br>
+				<input data-return="desc" placeholder="Package Description"><br>
+			</section>
+			<section id="might-delete2">
+				<button data-click="add-item">Add Item</button>
+				<section id="section-items">
+				</section>
+			</section>
+		`;
+		}
+		else {
+			console.log("SO YOU CAN NOT WARN! anyways loading autosave now")
+			this._template = `
 			<section>
 				<input data-return="name" placeholder="Package Name"><br>
 				<input data-return="desc" placeholder="Package Description"><br>
@@ -28,6 +43,8 @@ export class BeePackage extends ComponentBase {
 				</section>
 			</section>
 		`;
+        }
+		
 
 		this._htmlTag = 'DIV'
 
@@ -44,7 +61,7 @@ export class BeePackage extends ComponentBase {
 			'name': this.json.name,
 			'desc': this.json.desc
 		};
-		//Fix restore to be a button on the side with convert and merge
+		//Fix restore to allow NOT RESTORE
 		if (Object.keys(json).length > 0) {
 			alert( 'Your package was restored from your last session successfully. For security, files from your computer are not saved.' );
 		}

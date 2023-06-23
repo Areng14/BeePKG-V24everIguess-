@@ -8,8 +8,6 @@ function ElementSelect(x, p = document) { return p.querySelector(x) }
 
 
 
-
-
 /* The below is the file in question. */
 var pkg;
 /* The below is the variable declaring whether or not it is a zip or a bee_pack */
@@ -24,14 +22,19 @@ const btnZipTypeToggle = ElementSelect('#button-zip-type-toggle');
 const btnMergePack = ElementSelect('#button-merge-pack');
 /* The below is the button to access the link to the UCP Creators Server*/
 const btnDiscordLink = ElementSelect('#button-discord-link');
+/* The below is the restore save button*/
+const btnRestoreSave = ElementSelect('#button-restore-save');
+/* The below is for SAVING AGAIN */
+const btnForceSave = ElementSelect('#button-force-save')
 
 /* if ever find ye an explanation of the following, please inform me. -IMyself*/
 function removeAllChildren(el) {
 	while (el.lastChild) { el.removeChild(el.lastChild) }
 }
 
-function setupPackage(json = {}) {
-	pkg = new BeePackage(json);
+
+function setupPackage(json={}, isNotAutosave) {
+	pkg = new BeePackage(json, isNotAutosave);
 
 	// Run HTML setup, append generated html to container
 
@@ -70,12 +73,22 @@ function setupPackage(json = {}) {
 	}
 }
 
-function restoreSave() {
-	const stored = localStorage.getItem('beepkg-autosave');
+function restoreSave(loadSave = false) {
+	var stored = ''
+	if (loadSave == true) {
+		var stored = null;
+		console.warn("ok, so you set it to null, you feeling proud?")
+	}
+	else {
+		var stored = localStorage.getItem('beepkg-autosave');
+		console.warn("OH, YOU FIGURED OUT HOW TO GIVE THINGS VALUES")
+	}
+	
 	try {
 		if (stored != null)
 			//important
 			return JSON.parse(LZString.decompressFromUTF16(stored));
+		
 	}
 	catch {
 		console.warn('Your package could not be recovered successfully.', stored);
@@ -91,6 +104,7 @@ btnSave.onclick = function () {
 	this.classList.remove('needs-save');
 	btnSave.innerText = 'Changes Saved';
 	localStorage.setItem('beepkg-autosave', pkg.compress());
+	console.log("saving...")
 	needsSave = false;
 }
 btnDiscordLink.onclick = function () {
@@ -109,9 +123,11 @@ btnZipTypeToggle.onclick = function () {
 		btnDownload.innerHTML = "Download .zip"
 	};
 }
+
 btnMergePack.onclick = function () {
 	alert("This button is in alpha developing state. No proper function yet available.")
 }
+
 
 function beginAutosaveLoop() {
 
@@ -130,5 +146,22 @@ function beginAutosaveLoop() {
 	}, 1000 * 30)
 }
 
-setupPackage(restoreSave())
-beginAutosaveLoop()
+/* restore package should be encapsled by a button onClick function, but only after we get a way to add package w/out restore */
+
+setupPackage(restoreSave(true), true);
+btnForceSave.onclick = function () {
+	beginAutosaveLoop();
+	btnForceSave.disabled = true;
+	btnRestoreSave.disabled = true;
+	btnSave.onclick();
+}
+
+btnRestoreSave.onclick = function () {
+	btnForceSave.disabled = true;
+	btnRestoreSave.disabled = true;
+	document.getElementById("might-delete1").remove();
+	document.getElementById("might-delete2").remove();
+	setupPackage(restoreSave(false), false);
+	beginAutosaveLoop();
+}
+
