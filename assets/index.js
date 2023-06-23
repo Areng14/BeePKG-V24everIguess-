@@ -7,6 +7,7 @@ import { BeePackage } from "./BeePackage.class.js";
 function ElementSelect(x, p = document) { return p.querySelector(x) }
 
 
+
 /* The below is the file in question. */
 var pkg;
 /* The below is the variable declaring whether or not it is a zip or a bee_pack */
@@ -19,6 +20,8 @@ const btnSave = ElementSelect('#button-save');
 const btnZipTypeToggle = ElementSelect('#button-zip-type-toggle');
 /* The below is the button to merge bee_pack */
 const btnMergePack = ElementSelect('#button-merge-pack');
+/* The below is the button to access the link to the UCP Creators Server*/
+const btnDiscordLink = ElementSelect('#button-discord-link');
 /* The below is the restore save button*/
 const btnRestoreSave = ElementSelect('#button-restore-save');
 /* The below is for SAVING AGAIN */
@@ -29,11 +32,12 @@ function removeAllChildren(el) {
 	while (el.lastChild) { el.removeChild(el.lastChild) }
 }
 
+
 function setupPackage(json={}, isNotAutosave) {
 	pkg = new BeePackage(json, isNotAutosave);
 
 	// Run HTML setup, append generated html to container
-	
+
 	// This isn't necessary. Packages can't be loaded by file yet.
 	// removeAllChildren(q('#pkg-container'));
 	ElementSelect('#pkg-container').appendChild(pkg.html());
@@ -42,7 +46,7 @@ function setupPackage(json={}, isNotAutosave) {
 		btnDownload.disabled = true;
 		btnDownload.innerText = 'Processing...';
 
-		pkg.export().then((x)=>{
+		pkg.export().then((x) => {
 
 			btnDownload.innerText = 'Saving...';
 			if (zipType == "zip") {
@@ -51,20 +55,19 @@ function setupPackage(json={}, isNotAutosave) {
 				btnDownload.disabled = false;
 				btnDownload.innerHTML = 'Download .zip';
 			}
-			else if (zipType == "bee")
-			{
+			else if (zipType == "bee") {
 				saveAs(x, `ucp_${pkg.idl}.bee_pack`);
 				btnDownload.disabled = false;
 				btnDownload.innerHTML = 'Download .bee';
 			};
 
-		}).catch((err)=>{
-			
+		}).catch((err) => {
+
 			btnDownload.disabled = false;
 			btnDownload.innerText = 'Download';
 
-			console.warn( 'An error occurred:\n\n', err );
-			alert( 'An error occurred:\n\n' + err + '\n\nDumped to console.' );
+			console.warn('An error occurred:\n\n', err);
+			alert('An error occurred:\n\n' + err + '\n\nDumped to console.');
 
 		})
 	}
@@ -88,15 +91,15 @@ function restoreSave(loadSave = false) {
 		
 	}
 	catch {
-		console.warn(`stored doesn't work. maybe its null?` );
-		
+		console.warn('Your package could not be recovered successfully.', stored);
+		alert('Your package could not be recovered successfully. Save dumped to console.');
 	}
 	return {}
 }
 
 var needsSave = true;
 
-btnSave.onclick = function() {
+btnSave.onclick = function () {
 	if (!needsSave) { return }
 	this.classList.remove('needs-save');
 	btnSave.innerText = 'Changes Saved';
@@ -104,9 +107,11 @@ btnSave.onclick = function() {
 	console.log("saving...")
 	needsSave = false;
 }
+btnDiscordLink.onclick = function () {
+	window.location.href("https://discord.gg/py7VncfNRe")
+}
 
-btnZipTypeToggle.onclick = function ()
-{
+btnZipTypeToggle.onclick = function () {
 	if (zipType == "zip") {
 		zipType = "bee";
 		btnZipTypeToggle.innerHTML = "to .zip"
@@ -119,29 +124,26 @@ btnZipTypeToggle.onclick = function ()
 	};
 }
 
-/* I'm sorry for the following poorly written code. */
-btnMergePack.onclick = function ()
-{
+btnMergePack.onclick = function () {
 	alert("This button is in alpha developing state. No proper function yet available.")
-
 }
 
 
 function beginAutosaveLoop() {
 
-	ElementSelect('#pkg-container').addEventListener('input',()=>{
+	ElementSelect('#pkg-container').addEventListener('input', () => {
 		btnSave.classList.add('needs-save');
 		btnSave.innerText = 'Save Now';
 		needsSave = true;
 	})
 
-	setInterval( ()=>{
+	setInterval(() => {
 		if (!needsSave) { return }
 		btnSave.classList.remove('needs-save');
 		btnSave.innerText = 'Changes Saved';
-		localStorage.setItem( 'beepkg-autosave', pkg.compress() )
+		localStorage.setItem('beepkg-autosave', pkg.compress())
 		needsSave = false;
-	}, 1000*30 )
+	}, 1000 * 30)
 }
 
 /* restore package should be encapsled by a button onClick function, but only after we get a way to add package w/out restore */

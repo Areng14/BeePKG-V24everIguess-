@@ -157,7 +157,6 @@ button:disabled {
 /* Custom checkboxes */
 
 input[type="checkbox"] {
-	appearance: none;
 	width: 16px;
 	height: 16px;
 	margin-bottom: -4px;
@@ -173,8 +172,6 @@ input:checked {
 	border: 1px solid #0000;
 	font-size: 10px;
 }
-
-/* This doesn't work and I have no idea why. I'll re-enable it if I manage to fix it. */
 
 
 input:checked::after {
@@ -200,6 +197,16 @@ input:disabled {
 	transition: color 0.5s linear;
 	cursor: not-allowed;
 	user-select: none;
+}
+#button-discord-link{
+	position: fixed;
+	bottom: 15px;
+	color: mediumpurple;
+	font-size: 13px;
+	transition: color 0.5s linear;
+	cursor: not-allowed;
+	user-select: none;
+
 }
 
 #button-save.needs-save {
