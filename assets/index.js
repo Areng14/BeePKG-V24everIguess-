@@ -22,6 +22,8 @@ const btnSave = ElementSelect('#button-save');
 const btnZipTypeToggle = ElementSelect('#button-zip-type-toggle');
 /* The below is the button to merge bee_pack */
 const btnMergePack = ElementSelect('#button-merge-pack');
+/* The below is the button to access the link to the UCP Creators Server*/
+const btnDiscordLink = ElementSelect('#button-discord-link');
 
 /* if ever find ye an explanation of the following, please inform me. -IMyself*/
 function removeAllChildren(el) {
@@ -90,6 +92,9 @@ btnSave.onclick = function () {
 	btnSave.innerText = 'Changes Saved';
 	localStorage.setItem('beepkg-autosave', pkg.compress());
 	needsSave = false;
+}
+btnDiscordLink.onclick = function () {
+	window.location.href("https://discord.gg/py7VncfNRe")
 }
 
 btnZipTypeToggle.onclick = function () {
