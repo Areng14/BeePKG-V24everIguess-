@@ -108,7 +108,7 @@ btnSave.onclick = function () {
 	needsSave = false;
 }
 btnDiscordLink.onclick = function () {
-	window.location.href("https://discord.gg/py7VncfNRe")
+	window.location.href = "https://discord.gg/py7VncfNRe"
 }
 
 btnZipTypeToggle.onclick = function () {
