@@ -4,6 +4,10 @@ import { BeePackage } from "./BeePackage.class.js";
 	Index.js
 */
 
+console.warn('%c⚠️ DEPRECATION NOTICE', 'font-size: 20px; font-weight: bold; color: #ffa500;');
+console.warn('This version of BeePKG is deprecated and no longer maintained.');
+console.warn('Please use BeePEE instead: https://github.com/Areng14/BeePEE');
+
 function ElementSelect(x, p = document) { return p.querySelector(x) }
 
 
